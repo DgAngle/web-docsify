@@ -11,16 +11,44 @@
 </head>
 
 <body>
+    <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
     <div id="app"></div>
     <script>
     window.$docsify = {
-        name: '',
+        name: 'xiaoyu-doc',
         loadNavbar: true,
         loadSidebar: true,
+        coverpage: true,
+        auto2top: true, //切换页面后是否自动跳转到页面顶部
+        maxLevel: 5, //最大支持渲染的标题层级
+        //全文搜索
+        search: {
+            //maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+            paths: 'auto',
+            placeholder: '搜索',
+            noData: '找不到结果',
+            // 搜索标题的最大程级, 1 - 6
+            depth: 3,
+        },
+        plugins: [
+            EditOnGithubPlugin.create('https://github.com/DgAngle/web-docsify/blob/master/')
+        ],
         repo: ''
     }
     </script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <!--Java代码高亮-->
+    <script src="//unpkg.com/prismjs/components/prism-java.js"></script>
+    <!--全文搜索-->
+    <script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
+    <!-- 复制到剪贴板 -->
+    <script src="//unpkg.com/docsify-copy-code"></script>
+    <!-- 图片缩放 -->
+    <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+    <!-- 字数统计 -->
+    <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+    <!-- 表情符号 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
 </body>
 
 </html>
